@@ -1,0 +1,100 @@
+JFDML JFormDesigner: "5.2.3.0.281" Java: "1.8.0_91" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq l {par l:::p {seq {comp one:::p:62:p, space :::x, comp two:::p:62:p}, comp zero:::::x, seq l {par l {comp seven::l:p:62:p, comp four::l:p:62:p}, space :::p, par l {comp five:::p:62:p, comp eight:::p:62:p}}}, space :::p, par l:::p {seq {comp nine:::p:62:p, space :::p, comp divide:::p:62:p}, seq {comp comma:::p:62:p, space :::x, comp plus:::p:62:p}, seq {comp six:::p:62:p, space :::x, comp multiply:::p:62:p}, seq {comp three:::p:62:p, space :::x, comp minus:::p:62:p}}, space u:::p, comp equal::::64:x}, comp text::l::342:x}, space :::p}}"
+			"$verticalGroup": "par l {seq t {space :p:14:p, comp text:::p:97:p, space u:::p, par t {comp equal:::::x, seq {par b {comp seven::b:p:41:p, comp eight::b:p:41:p, comp nine::b:p:41:p, comp divide::b:p:41:p}, space s:::p, par b {comp four::b:p:41:p, comp five::b:p:41:p, comp six::b:p:41:p, comp multiply::b:p:41:p}, par l {seq {space s:::p, par b {comp one::b:p:41:p, comp two::b:p:41:p, comp three::b:p:41:p}, space ::9:x}, seq t {space ::9:x, comp minus:::p:41:p, space s:::p}}, par b {comp zero::b:p:42:p, comp comma::b:p:41:p, comp plus::b:p:41:p}}}, space :p:18:p}}"
+		} ) {
+			name: "this"
+			"visible": true
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "zero"
+				"text": "0"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "zeroActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "seven"
+				"text": "7"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "sevenActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "eight"
+				"text": "8"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "eightActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "nine"
+				"text": "9"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "nineActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "divide"
+				"text": "/"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "divideActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "equal"
+				"text": "="
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "equalActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "comma"
+				"text": ","
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "commaActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "plus"
+				"text": "+"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "plusActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "four"
+				"text": "4"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "fourActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "one"
+				"text": "1"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "oneActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "five"
+				"text": "5"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "fiveActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "two"
+				"text": "2"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "twoActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "six"
+				"text": "6"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "sixActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "three"
+				"text": "3"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "threeActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "multiply"
+				"text": "*"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "multiplyActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "minus"
+				"text": "-"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "minusActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "text"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 100, 15 )
+			"size": new java.awt.Dimension( 370, 390 )
+		} )
+	}
+}
