@@ -6,8 +6,7 @@ package com.courses.spalah.Calculator;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedReader;
-import javax.swing.*;
+ import javax.swing.*;
 
 import org.jdesktop.layout.GroupLayout;
 import org.jdesktop.layout.LayoutStyle;
@@ -180,6 +179,7 @@ public class Calculator extends JFrame {
         //---- zero ----
         zero.setText("0");
         zero.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 zeroActionPerformed(e);
             }
@@ -188,6 +188,7 @@ public class Calculator extends JFrame {
         //---- seven ----
         seven.setText("7");
         seven.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 sevenActionPerformed(e);
             }
@@ -196,6 +197,7 @@ public class Calculator extends JFrame {
         //---- eight ----
         eight.setText("8");
         eight.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 eightActionPerformed(e);
             }
@@ -204,6 +206,7 @@ public class Calculator extends JFrame {
         //---- nine ----
         nine.setText("9");
         nine.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 nineActionPerformed(e);
             }
@@ -212,6 +215,7 @@ public class Calculator extends JFrame {
         //---- divide ----
         divide.setText("/");
         divide.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 divideActionPerformed(e);
             }
@@ -220,6 +224,7 @@ public class Calculator extends JFrame {
         //---- equal ----
         equal.setText("=");
         equal.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 equalActionPerformed(e);
             }
@@ -228,6 +233,7 @@ public class Calculator extends JFrame {
         //---- comma ----
         comma.setText(",");
         comma.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 commaActionPerformed(e);
             }
@@ -236,6 +242,7 @@ public class Calculator extends JFrame {
         //---- plus ----
         plus.setText("+");
         plus.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 plusActionPerformed(e);
             }
@@ -244,6 +251,7 @@ public class Calculator extends JFrame {
         //---- four ----
         four.setText("4");
         four.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 fourActionPerformed(e);
             }
@@ -252,6 +260,7 @@ public class Calculator extends JFrame {
         //---- one ----
         one.setText("1");
         one.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 oneActionPerformed(e);
             }
@@ -260,6 +269,7 @@ public class Calculator extends JFrame {
         //---- five ----
         five.setText("5");
         five.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 fiveActionPerformed(e);
             }
@@ -268,6 +278,7 @@ public class Calculator extends JFrame {
         //---- two ----
         two.setText("2");
         two.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 twoActionPerformed(e);
             }
@@ -276,6 +287,7 @@ public class Calculator extends JFrame {
         //---- six ----
         six.setText("6");
         six.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 sixActionPerformed(e);
             }
@@ -284,6 +296,7 @@ public class Calculator extends JFrame {
         //---- three ----
         three.setText("3");
         three.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 threeActionPerformed(e);
             }
@@ -292,6 +305,7 @@ public class Calculator extends JFrame {
         //---- multiply ----
         multiply.setText("*");
         multiply.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 multiplyActionPerformed(e);
             }
@@ -300,6 +314,7 @@ public class Calculator extends JFrame {
         //---- minus ----
         minus.setText("-");
         minus.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 minusActionPerformed(e);
             }
@@ -308,85 +323,85 @@ public class Calculator extends JFrame {
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
-                contentPaneLayout.createParallelGroup()
+            contentPaneLayout.createParallelGroup()
+                .add(contentPaneLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .add(contentPaneLayout.createParallelGroup()
                         .add(contentPaneLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .add(contentPaneLayout.createParallelGroup()
-                                        .add(contentPaneLayout.createSequentialGroup()
-                                                .add(contentPaneLayout.createParallelGroup(GroupLayout.LEADING, false)
-                                                        .add(contentPaneLayout.createSequentialGroup()
-                                                                .add(one, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .add(two, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
-                                                        .add(zero, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .add(contentPaneLayout.createSequentialGroup()
-                                                                .add(contentPaneLayout.createParallelGroup()
-                                                                        .add(seven, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-                                                                        .add(four, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
-                                                                .addPreferredGap(LayoutStyle.RELATED)
-                                                                .add(contentPaneLayout.createParallelGroup()
-                                                                        .add(five, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-                                                                        .add(eight, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))))
-                                                .addPreferredGap(LayoutStyle.RELATED)
-                                                .add(contentPaneLayout.createParallelGroup(GroupLayout.LEADING, false)
-                                                        .add(contentPaneLayout.createSequentialGroup()
-                                                                .add(nine, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(LayoutStyle.RELATED)
-                                                                .add(divide, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
-                                                        .add(contentPaneLayout.createSequentialGroup()
-                                                                .add(comma, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .add(plus, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
-                                                        .add(contentPaneLayout.createSequentialGroup()
-                                                                .add(six, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .add(multiply, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
-                                                        .add(contentPaneLayout.createSequentialGroup()
-                                                                .add(three, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .add(minus, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)))
-                                                .addPreferredGap(LayoutStyle.UNRELATED)
-                                                .add(equal, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
-                                        .add(text, GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE))
-                                .addContainerGap())
+                            .add(contentPaneLayout.createParallelGroup(GroupLayout.LEADING, false)
+                                .add(contentPaneLayout.createSequentialGroup()
+                                    .add(one, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(two, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
+                                .add(zero, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(contentPaneLayout.createSequentialGroup()
+                                    .add(contentPaneLayout.createParallelGroup()
+                                        .add(seven, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+                                        .add(four, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.RELATED)
+                                    .add(contentPaneLayout.createParallelGroup()
+                                        .add(five, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+                                        .add(eight, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))))
+                            .addPreferredGap(LayoutStyle.RELATED)
+                            .add(contentPaneLayout.createParallelGroup(GroupLayout.LEADING, false)
+                                .add(contentPaneLayout.createSequentialGroup()
+                                    .add(nine, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.RELATED)
+                                    .add(divide, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
+                                .add(contentPaneLayout.createSequentialGroup()
+                                    .add(comma, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(plus, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
+                                .add(contentPaneLayout.createSequentialGroup()
+                                    .add(six, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(multiply, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
+                                .add(contentPaneLayout.createSequentialGroup()
+                                    .add(three, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(minus, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(LayoutStyle.UNRELATED)
+                            .add(equal, GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                        .add(text, GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE))
+                    .addContainerGap())
         );
         contentPaneLayout.setVerticalGroup(
-                contentPaneLayout.createParallelGroup()
-                        .add(GroupLayout.TRAILING, contentPaneLayout.createSequentialGroup()
-                                .add(14, 14, 14)
-                                .add(text, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.UNRELATED)
-                                .add(contentPaneLayout.createParallelGroup(GroupLayout.TRAILING)
-                                        .add(equal, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .add(contentPaneLayout.createSequentialGroup()
-                                                .add(contentPaneLayout.createParallelGroup(GroupLayout.BASELINE)
-                                                        .add(seven, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                                                        .add(eight, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                                                        .add(nine, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                                                        .add(divide, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
-                                                .add(18, 18, 18)
-                                                .add(contentPaneLayout.createParallelGroup(GroupLayout.BASELINE)
-                                                        .add(four, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                                                        .add(five, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                                                        .add(six, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                                                        .add(multiply, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
-                                                .add(contentPaneLayout.createParallelGroup()
-                                                        .add(contentPaneLayout.createSequentialGroup()
-                                                                .add(18, 18, 18)
-                                                                .add(contentPaneLayout.createParallelGroup(GroupLayout.BASELINE)
-                                                                        .add(one, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                                                                        .add(two, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                                                                        .add(three, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
-                                                                .addPreferredGap(LayoutStyle.RELATED, 9, Short.MAX_VALUE))
-                                                        .add(GroupLayout.TRAILING, contentPaneLayout.createSequentialGroup()
-                                                                .addPreferredGap(LayoutStyle.RELATED, 9, Short.MAX_VALUE)
-                                                                .add(minus, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                                                                .add(18, 18, 18)))
-                                                .add(contentPaneLayout.createParallelGroup(GroupLayout.BASELINE)
-                                                        .add(zero, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                                                        .add(comma, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                                                        .add(plus, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))))
-                                .add(18, 18, 18))
+            contentPaneLayout.createParallelGroup()
+                .add(GroupLayout.TRAILING, contentPaneLayout.createSequentialGroup()
+                    .add(14, 14, 14)
+                    .add(text, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.UNRELATED)
+                    .add(contentPaneLayout.createParallelGroup(GroupLayout.TRAILING)
+                        .add(equal, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(contentPaneLayout.createSequentialGroup()
+                            .add(contentPaneLayout.createParallelGroup(GroupLayout.BASELINE)
+                                .add(seven, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                .add(eight, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                .add(nine, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                .add(divide, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
+                            .add(18, 18, 18)
+                            .add(contentPaneLayout.createParallelGroup(GroupLayout.BASELINE)
+                                .add(four, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                .add(five, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                .add(six, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                .add(multiply, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
+                            .add(contentPaneLayout.createParallelGroup()
+                                .add(contentPaneLayout.createSequentialGroup()
+                                    .add(18, 18, 18)
+                                    .add(contentPaneLayout.createParallelGroup(GroupLayout.BASELINE)
+                                        .add(one, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                        .add(two, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                        .add(three, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(LayoutStyle.RELATED, 9, Short.MAX_VALUE))
+                                .add(GroupLayout.TRAILING, contentPaneLayout.createSequentialGroup()
+                                    .addPreferredGap(LayoutStyle.RELATED, 9, Short.MAX_VALUE)
+                                    .add(minus, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                    .add(18, 18, 18)))
+                            .add(contentPaneLayout.createParallelGroup(GroupLayout.BASELINE)
+                                .add(zero, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .add(comma, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                .add(plus, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))))
+                    .add(18, 18, 18))
         );
         pack();
         setLocationRelativeTo(getOwner());
