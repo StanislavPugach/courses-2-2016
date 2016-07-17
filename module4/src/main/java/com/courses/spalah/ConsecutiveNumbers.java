@@ -22,15 +22,18 @@ public class ConsecutiveNumbers {
     public static void main(String[] args) {
         String[] arrayOfNumbers = args[0].split(args[1]);
 
-        if (isArrayConsistent(arrayOfNumbers)) System.out.println("TRUE");
-        else System.out.println("FALSE");
+        if (isArrayConsistent(arrayOfNumbers)) {
+            System.out.println("TRUE");
+        } else {
+            System.out.println("FALSE");
+        }
     }
 
     private static boolean isArrayConsistent(String[] array) {
         boolean result = false;
-        for (int i = 0, j = 1; i < array.length - 1; i++, j++) {
+        for (int i = 0; i < array.length - 1; i++) {
 
-            if (Integer.parseInt(array[j]) - Integer.parseInt(array[i]) == 1) {
+            if (Integer.parseInt(array[i + 1]) - Integer.parseInt(array[i]) == 1) {
                 result = true;
             } else {
                 result = false;
