@@ -15,7 +15,11 @@ public class Deposit {
         Name = name;
     }
 
-    public float Profit(float years) {
-        return  (InitialDepositAmount*InterestRate/100)*years;
+    public float calculateProfit(float years) {
+        float result = InitialDepositAmount;
+        for (int i = 0; i < years; i++) {
+            result += InitialDepositAmount * InterestRate /100;
+        }
+        return  result - InitialDepositAmount;
     }
 }

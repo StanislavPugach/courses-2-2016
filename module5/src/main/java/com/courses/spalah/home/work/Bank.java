@@ -17,8 +17,8 @@ public class Bank {
         deposit3 = new Deposit(300_000F, 18F, "Vova");
     }
 
-    public float Profit(float years) {
-        return deposit1.Profit(years) + deposit2.Profit(years) + deposit3.Profit(years);
+    public float calculateBankProfit(float years) {
+        return deposit1.calculateProfit(years) + deposit2.calculateProfit(years) + deposit3.calculateProfit(years);
     }
 
 }
