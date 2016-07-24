@@ -17,15 +17,44 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
+<<<<<<< HEAD
       <profile default="false" name="Maven default annotation processors profile" enabled="true">
+=======
+      <profile default="false" name="Annotation profile for module5" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="module5" />
+      </profile>
+      <profile default="false" name="Annotation profile for module3" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="module3" />
+      </profile>
+      <profile default="false" name="Annotation profile for module2" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="module2" />
+      </profile>
+      <profile default="false" name="Annotation profile for module6" enabled="true">
+>>>>>>> 363f4c51a57549a85329ce71fe9c1cd3da38abd7
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+<<<<<<< HEAD
+        <module name="module2" />
         <module name="module3" />
         <module name="module4" />
         <module name="module5" />
+=======
+        <module name="module6" />
+>>>>>>> 363f4c51a57549a85329ce71fe9c1cd3da38abd7
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -33,6 +62,7 @@
       <module name="module3" target="1.8" />
       <module name="module4" target="1.8" />
       <module name="module5" target="1.8" />
+      <module name="module6" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
