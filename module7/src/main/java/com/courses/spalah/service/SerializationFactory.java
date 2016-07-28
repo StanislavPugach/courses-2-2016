@@ -18,7 +18,7 @@ public class SerializationFactory {
      */
     public static CarParkingDeserializer getDeserializer(Format format) {
         // TODO - здесь будет ваша логика. Необходимо вернуть реализацию интерфейса
-        return null;
+        return new CarParkingJSONSerialization();
     }
 
     /**
@@ -31,6 +31,6 @@ public class SerializationFactory {
      */
     public static CarParkingSerializer getSerializer(Format format) {
         // TODO - здесь будет ваша логика. Необходимо вернуть реализацию интерфейса
-        return  null;
+        return new CarParkingJSONSerialization();
     }
 }
