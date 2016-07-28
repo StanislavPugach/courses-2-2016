@@ -3,8 +3,7 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
-<<<<<<< HEAD
-=======
+
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -17,7 +16,7 @@
       </list>
     </option>
   </component>
->>>>>>> 47fe28671573c8a260434a36b4e2360d7ab5ffa4
+
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
