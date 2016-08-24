@@ -8,6 +8,7 @@ class Table {
     private User[] users = new User[5];
     private Bet[] bets = new Bet[5];
     private static Table table;
+    private Cell winnerBet;
 
     public static synchronized Table getTable() {
         if (table == null) {
@@ -66,9 +67,9 @@ class Table {
                 for (int i = 0; i < bets.length; i++) {
                     if (bets[i] == null) {
                         bets[i] = bet;
+                        System.out.println("Bet is excepted");
+                        break;
                     }
-                    System.out.println("Bet is excepted");
-                    break;
                 }
 
         }
@@ -105,11 +106,19 @@ class Table {
         return result;
     }
 
+    public void spinRoulette() {
+        winnerBet = Roulette.getRoulette().getWinningBet();
+    }
+
     public User[] getUsers() {
         return users;
     }
 
     public Bet[] getBets() {
         return bets;
+    }
+
+    public Cell getWinnerBet() {
+        return winnerBet;
     }
 }

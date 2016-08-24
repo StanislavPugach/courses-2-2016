@@ -3,34 +3,33 @@ package com.courses.spalah;
 /**
  * Created by Пугач Станислав on 02.08.2016.
  */
-class StraightUp extends WinnerBet {
+class StraightUp extends PlayBet {
 
     public StraightUp(Bet userBet) {
         super(userBet);
     }
 
-    public void findWinner() {
-        if (getUserBet().getBet().equals(Bets.STRAIGHT_UP) && getUserBet().getNumber() == getWinningBet().getNumber()) {
-
-            for (User user :
-                    super.getTable().getUsers()) {
-                if (user.getName().equals(super.getUserBet().getUserName())) {
-                    user.setAccount(user.getAccount() + super.getUserBet().getAmount());
-
-                    System.out.println("Player" + super.getUserBet().getUserName() + "+" + super.getUserBet().getAmount());
+    @Override
+    public void findWinner(){
+        for (User user :
+                Table.getTable().getUsers()) {
+            if (user.getName().equals(getUserBet().getUserName())) {
+                if (isWin()){
+                    user.setAccount(user.getAccount() + getUserBet().getAmount());
+                    System.out.println("Player" + getUserBet().getUserName() + "+" + getUserBet().getAmount() * 35);
                 }
-            }
-
-        } else {
-            for (User user :
-                    super.getTable().getUsers()) {
-                if (user.getName().equals(super.getUserBet().getUserName())) {
-                    user.setAccount(user.getAccount() - super.getUserBet().getAmount());
-
-                    System.out.println("Player" + super.getUserBet().getUserName() + "-" + super.getUserBet().getAmount());
+                else {
+                    user.setAccount(user.getAccount() - getUserBet().getAmount());
+                    System.out.println("Player" + getUserBet().getUserName() + "-" + getUserBet().getAmount());
                 }
             }
         }
     }
+
+    @Override
+    public boolean isWin() {
+        return getUserBet().getBet().equals(Bets.STRAIGHT_UP) && getUserBet().getNumber() == table.getWinnerBet().getNumber();
+    }
+
 
 }

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/module4/src/main/java/com/courses/spalah/Calculator/Calculator.java" />
+    </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns />
     <annotationProcessing>
@@ -12,12 +15,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="module6" />
+        <module name="module9" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="module4" target="1.5" />
       <module name="module6" target="1.8" />
+      <module name="module9" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -6,6 +6,12 @@ import java.util.Random;
  * Created by Пугач Станислав on 29.07.2016.
  */
 class Roulette {
+    private static Roulette roulette;
+
+    public Roulette() {
+        this.roulette = this;
+    }
+
     Cell[] cells = new Cell[37];
 
     public void generate() {
@@ -41,4 +47,7 @@ class Roulette {
         return null;
     }
 
+    public static Roulette getRoulette() {
+        return roulette;
+    }
 }

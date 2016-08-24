@@ -8,8 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
  import javax.swing.*;
 
-import org.jdesktop.layout.GroupLayout;
-import org.jdesktop.layout.LayoutStyle;
+
 
 /**
  * @author Stanislav Pugach

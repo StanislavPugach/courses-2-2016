@@ -3,14 +3,14 @@ package com.courses.spalah;
 /**
  * Created by Пугач Станислав on 31.07.2016.
  */
- abstract class Command {
+abstract class Command {
     private String[] command;
 
-     Command(String[] command) {
+    Command(String[] command) {
         this.command = command;
     }
 
-    static Command getExactCommand(String[] command){
+    static Command getExactCommand(String[] command) {
         Commands switchCommand = Commands.valueOf(command[0]);
         Command result = null;
         switch (switchCommand) {
@@ -30,24 +30,9 @@ package com.courses.spalah;
         return result;
     }
 
-     abstract void execute();
+    abstract void execute();
 
-     String[]  getCommand() {
+    String[] getCommand() {
         return command;
     }
 }
-
-
-
-//        if (command[0].equals(NEW_USER)){
-//            return new NewUserCommand(command);
-//        }
-//        if (command[0].equals(BET)){
-//            return new BetCommand(command);
-//        }
-//        if (command[0].equals(PLAY_GAME)){
-//            return new PlayCommand(command);
-//        }
-//        if (command[0].equals(EXIT)){
-//            return new ExitCommand(command);
-//        }
