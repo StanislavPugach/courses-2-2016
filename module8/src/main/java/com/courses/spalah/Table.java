@@ -21,11 +21,11 @@ class Table {
         table = new Table();
     }
 
-    public void resetBets() {
+     void resetBets() {
         bets = new Bet[5];
     }
 
-    public boolean hasPlace() {
+     boolean hasPlace() {
         boolean result = false;
         for (int i = 0; i < users.length; i++) {
             if (users[i] == null) {
@@ -40,7 +40,7 @@ class Table {
         return result;
     }
 
-    public void addUser(User user) {
+     void addUser(User user) {
 
         for (int i = 0; i < users.length; i++) {
             if (users[i] == null) {
@@ -54,7 +54,7 @@ class Table {
                 user.getAccount() + " is added to table");
     }
 
-    public void addBet(Bet bet) {
+     void addBet(Bet bet) {
 
         switch (isBetLegal(bet)) {
             case 2:
@@ -106,19 +106,19 @@ class Table {
         return result;
     }
 
-    public void spinRoulette() {
+     void spinRoulette() {
         winnerBet = Roulette.getRoulette().getWinningBet();
     }
 
-    public User[] getUsers() {
+     User[] getUsers() {
         return users;
     }
 
-    public Bet[] getBets() {
+     Bet[] getBets() {
         return bets;
     }
 
-    public Cell getWinnerBet() {
+     Cell getWinnerBet() {
         return winnerBet;
     }
 }

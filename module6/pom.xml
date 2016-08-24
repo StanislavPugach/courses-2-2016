@@ -22,8 +22,5 @@
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>../module9</module>
-    </modules>
 
 </project>

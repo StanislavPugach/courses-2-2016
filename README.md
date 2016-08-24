@@ -91,3 +91,43 @@
  * Реализация консольной рулетки
 
 [ДЗ #8](https://github.com/rxn1d/courses-2-2016/blob/master/module8/module_8_home_work.md)
+
+9\. Исключения
+ * Что такое Exception
+ * Зачем нужны исключения
+ * Иерархия исключений
+ * Checked и unchecked
+ * Создание исключения
+ * Обработка исключений
+
+[ДЗ #9](https://github.com/rxn1d/courses-2-2016/blob/master/module9/module_9_home_work.md)
+
+10\. Введение в модель памяти и сборку мусора
+
+11\. Коллекции в Java
+ * Зачем нужны и в чем преимущества коллекций
+ * Иерархия коллекций
+ * Iterable
+ * Iterator
+ * Collection
+ * List
+ * Queue
+ * Set
+ * Map
+
+[ДЗ #11](https://github.com/rxn1d/courses-2-2016/blob/master/module11/module_11_home_work.md)
+ * Читаем о коллекциях
+ * Пишем анализатор текста
+
+12\. Обобщения
+ * Что такое обощения(generics)
+ * Обощение в коллекциях
+ * Обобщенные классы
+ * Обощенные методы
+ * Ограничения переменной типа
+ * Обощения и JVM
+ * Подчистка и трансляция
+ * Wildcards
+
+[ДЗ #12](https://github.com/rxn1d/courses-2-2016/blob/master/module12/module_12_home_work.md)
+ * Пишем свою реализацию связного списка

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <excludeFromCompile>
-      <file url="file://$PROJECT_DIR$/module4/src/main/java/com/courses/spalah/Calculator/Calculator.java" />
-    </excludeFromCompile>
     <resourceExtensions />
-    <wildcardResourcePatterns />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
@@ -15,13 +22,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="module9" />
+        <module name="module10" />
+        <module name="module11" />
+        <module name="module12" />
+        <module name="module5" />
+        <module name="module7" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="module4" target="1.5" />
+      <module name="module10" target="1.8" />
+      <module name="module11" target="1.8" />
+      <module name="module12" target="1.8" />
+      <module name="module4" target="1.8" />
+      <module name="module5" target="1.8" />
       <module name="module6" target="1.8" />
-      <module name="module9" target="1.7" />
+      <module name="module7" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -34,7 +34,4 @@
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>../module8</module>
-    </modules>
 </project>
