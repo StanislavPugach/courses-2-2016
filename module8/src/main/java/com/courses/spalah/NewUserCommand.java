@@ -12,8 +12,11 @@ package com.courses.spalah;
     @Override
     public void execute() {
         Table table = Table.getTable();
-        if (table.hasPlace()){
+        try {
+            table.hasPlace();
             table.addUser(createUser(super.getCommand()));
+        } catch (NoPlacesAtTheTable ex) {
+            System.out.println("There are no places on the table");
         }
     }
 

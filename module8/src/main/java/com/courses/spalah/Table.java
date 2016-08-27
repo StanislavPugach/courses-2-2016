@@ -21,26 +21,23 @@ class Table {
         table = new Table();
     }
 
-     void resetBets() {
+    void resetBets() {
         bets = new Bet[5];
     }
 
-     boolean hasPlace() {
+    void hasPlace() throws NoPlacesAtTheTable {
         boolean result = false;
         for (int i = 0; i < users.length; i++) {
             if (users[i] == null) {
                 result = true;
-                break;
             }
         }
-
         if (!result) {
-            System.out.println("There are no places on the table");
+            throw new NoPlacesAtTheTable();
         }
-        return result;
     }
 
-     void addUser(User user) {
+    void addUser(User user) {
 
         for (int i = 0; i < users.length; i++) {
             if (users[i] == null) {
@@ -54,39 +51,32 @@ class Table {
                 user.getAccount() + " is added to table");
     }
 
-     void addBet(Bet bet) {
+    void addBet(Bet bet) {
 
-        switch (isBetLegal(bet)) {
-            case 2:
-                System.out.println("User has already made a bet");
-                break;
-            case 3:
-                System.out.println("User don`t have so much money");
-                break;
-            case 1:
-                for (int i = 0; i < bets.length; i++) {
-                    if (bets[i] == null) {
-                        bets[i] = bet;
-                        System.out.println("Bet is excepted");
-                        break;
-                    }
+        try {
+            isBetLegal(bet);
+
+            for (int i = 0; i < bets.length; i++) {
+                if (bets[i] == null) {
+                    bets[i] = bet;
+                    System.out.println("Bet is excepted");
                 }
-
+            }
+        } catch (NoFundsException e) {
+            System.out.println("User don`t have so much money");
+        } catch (UserStakedException e) {
+            System.out.println("User has already made a bet");
         }
     }
 
-    private int isBetLegal(Bet bet) {
-        int result = 1;
-        //TODO заменить на исключения
-
+    private void isBetLegal(Bet bet) throws UserStakedException, NoFundsException {
         for (Bet num :
                 bets) {
             if (num == null) {
                 continue;
             }
             if (num.getUserName().equals(bet.getUserName())) {
-                result = 2;
-                break;
+                throw new UserStakedException();
             }
         }
 
@@ -97,28 +87,25 @@ class Table {
             }
             if (num.getName().equals(bet.getUserName())) {
                 if (num.getAccount() < bet.getAmount()) {
-                    result = 3;
-                    break;
+                    throw new NoFundsException();
                 }
             }
         }
-
-        return result;
     }
 
-     void spinRoulette() {
+    void spinRoulette() {
         winnerBet = Roulette.getRoulette().getWinningBet();
     }
 
-     User[] getUsers() {
+    User[] getUsers() {
         return users;
     }
 
-     Bet[] getBets() {
+    Bet[] getBets() {
         return bets;
     }
 
-     Cell getWinnerBet() {
+    Cell getWinnerBet() {
         return winnerBet;
     }
 }
