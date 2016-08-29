@@ -5,9 +5,9 @@ package com.courses.spalah;
  */
  class Cell {
     private int number;
-    private int color; // 1 - red 2 - black
+    private Colors color; // 1 - red 2 - black
 
-    public Cell(int number, int color) {
+    public Cell(int number, Colors color) {
         this.number = number;
         this.color = color;
     }
@@ -16,7 +16,17 @@ package com.courses.spalah;
         return number;
     }
 
-    public int getColor() {
+    public Colors getColor() {
         return color;
+    }
+
+    public void setColor(Colors color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "number=" + number +
+                ", color=" + color;
     }
 }

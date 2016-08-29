@@ -60,6 +60,7 @@ class Table {
                 if (bets[i] == null) {
                     bets[i] = bet;
                     System.out.println("Bet is excepted");
+                    break;
                 }
             }
         } catch (NoFundsException e) {
@@ -95,6 +96,7 @@ class Table {
 
     void spinRoulette() {
         winnerBet = Roulette.getRoulette().getWinningBet();
+        System.out.println("WINNING NUMBER: " + winnerBet);
     }
 
     User[] getUsers() {

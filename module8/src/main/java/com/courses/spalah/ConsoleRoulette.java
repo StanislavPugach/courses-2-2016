@@ -3,6 +3,7 @@ package com.courses.spalah;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 import static com.courses.spalah.Command.getExactCommand;
 
@@ -16,6 +17,9 @@ public class ConsoleRoulette {
         // создание рулетки
         Roulette roulette = new Roulette();
         roulette.generate();
+        System.out.println("GAME STARTED");
+        //System.out.println("FOR INFO TYPE \"INFO\"");
+        System.out.println("GENERATED ROULETTE: " + Arrays.toString(Roulette.getRoulette().cells));
 
         while (loopGame) {
             String[] command = readFromConsole();

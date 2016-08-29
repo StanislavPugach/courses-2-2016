@@ -13,14 +13,17 @@ class StraightUp extends PlayBet {
     public void findWinner(){
         for (User user :
                 Table.getTable().getUsers()) {
+            if (user == null){
+                continue;
+            }
             if (user.getName().equals(getUserBet().getUserName())) {
                 if (isWin()){
                     user.setAccount(user.getAccount() + getUserBet().getAmount());
-                    System.out.println("Player" + getUserBet().getUserName() + "+" + getUserBet().getAmount() * 35);
+                    System.out.println("Player " + getUserBet().getUserName() + " + " + getUserBet().getAmount() * 35);
                 }
                 else {
                     user.setAccount(user.getAccount() - getUserBet().getAmount());
-                    System.out.println("Player" + getUserBet().getUserName() + "-" + getUserBet().getAmount());
+                    System.out.println("Player " + getUserBet().getUserName() + " - " + getUserBet().getAmount());
                 }
             }
         }

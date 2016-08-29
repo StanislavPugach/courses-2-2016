@@ -11,7 +11,7 @@ package com.courses.spalah;
 
     @Override
     public boolean isWin() {
-        return (getUserBet().getBet().equals(Bets.RED) && table.getWinnerBet().getColor() == 1);
+        return (getUserBet().getBet().equals(Bets.RED) && table.getWinnerBet().getColor() == Colors.RED);
     }
 
 
