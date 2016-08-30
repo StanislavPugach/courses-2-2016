@@ -26,6 +26,9 @@ abstract class Command {
             case EXIT:
                 result = new ExitCommand(command);
                 break;
+            case INFO:
+                result = new InfoCommand(command);
+                break;
         }
         return result;
     }

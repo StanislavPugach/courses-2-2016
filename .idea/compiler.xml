@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/module11/src/main/java/com/courses/spalah/collections/Maps.java" />
+      <file url="file://$PROJECT_DIR$/module11/src/main/java/com/courses/spalah/collections/Iterables.java" />
+      <file url="file://$PROJECT_DIR$/module11/src/main/java/com/courses/spalah/collections/Sets.java" />
+      <file url="file://$PROJECT_DIR$/module11/src/main/java/com/courses/spalah/collections/Lists.java" />
+      <file url="file://$PROJECT_DIR$/module11/src/main/java/com/courses/spalah/collections/Collections.java" />
+    </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="!?*.java" />
