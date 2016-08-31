@@ -18,7 +18,7 @@ public class TextAnalyzer {
         textAnalyzer.writeStatistic(OutFile, text);
     }
 
-    void writeStatistic(File file, ArrayList<String> text) {
+     void writeStatistic(File file, ArrayList<String> text) {
         try {
             PrintWriter writer = new PrintWriter(file);
             writer.println("COUNT OF SYMBOLS: " + getCountOfSimbols(text));
@@ -59,8 +59,9 @@ public class TextAnalyzer {
     }
 
     private String[] getArrayOfWords(String text) {
-        text = text.replaceAll(",", "").replaceAll("\\.", "").replaceAll(";", "");
-        return text.split(" ");
+        text = text.replaceAll(",", "").replaceAll("\\.", "").replaceAll(";", "").toLowerCase();
+        String[] words = text.split(" ");
+        return words;
     }
 
     private int getCountOfSimbols(ArrayList<String> text) {
