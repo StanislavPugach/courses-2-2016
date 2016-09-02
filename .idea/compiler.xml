@@ -32,18 +32,22 @@
         <module name="module10" />
         <module name="module11" />
         <module name="module12" />
+        <module name="module13" />
+        <module name="module14" />
         <module name="module5" />
         <module name="module7" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="module10" target="1.5" />
+      <module name="module10" target="1.8" />
       <module name="module11" target="1.5" />
       <module name="module12" target="1.8" />
-      <module name="module4" target="1.5" />
-      <module name="module5" target="1.5" />
-      <module name="module6" target="1.5" />
-      <module name="module7" target="1.5" />
+      <module name="module13" target="1.8" />
+      <module name="module14" target="1.8" />
+      <module name="module4" target="1.8" />
+      <module name="module5" target="1.8" />
+      <module name="module6" target="1.8" />
+      <module name="module7" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

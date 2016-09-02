@@ -30,6 +30,7 @@ public class List<E> implements MyList<E> {
 
         if (firstElement == null){
             firstElement = node;
+            size++;
         }
 
         else {
@@ -43,27 +44,41 @@ public class List<E> implements MyList<E> {
     @Override
     public void add(int index, E element) {
         Node<E> nItem = firstElement;
-        for (int i = 1; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             nItem = nItem.next;
         }
         Node<E> node = new Node<E>(nItem.item, nItem.next);
         nItem.item = element;
         nItem.next = node;
+        size++;
     }
 
     @Override
-    public void remove(int index) {
+    public void remove(int index) { //5
         Node<E> nItem = firstElement;
-        for (int i = 1; i < index - 1; i++) {
-            nItem = nItem.next;
+        if (index == 0){
+            firstElement = firstElement.next;
+            size--;
         }
-        nItem.next = nItem.next.next;
+        else {
+            for (int i = 0; i < index - 1; i++) { //3 4
+                nItem = nItem.next; //5
+            }
+            if (nItem.next.next == null){
+                nItem.next = null;
+            }
+            else {
+                nItem.next = nItem.next.next;
+            }
+            size--;
+        }
     }
+
 
     @Override
     public E get(int index) {
         Node<E> nItem = firstElement;
-        for (int i = 1; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             nItem = nItem.next;
         }
         return nItem.item;
@@ -72,7 +87,7 @@ public class List<E> implements MyList<E> {
     @Override
     public E set(int index, E element) {
         Node<E> nItem = firstElement;
-        for (int i = 1; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             nItem = nItem.next;
         }
         E retElement = nItem.item;
@@ -82,7 +97,15 @@ public class List<E> implements MyList<E> {
 
     @Override
     public boolean contains(E element) {
-        return false;
+        boolean result = false;
+        Node<E> nItem = firstElement;
+            for (int i = 0; i < size; i++) {
+                if (nItem.item == element) {
+                    result = true;
+                }
+                nItem = nItem.next;
+            }
+        return result;
     }
 
     @Override

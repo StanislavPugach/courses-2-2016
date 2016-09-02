@@ -131,3 +131,19 @@
 
 [ДЗ #12](https://github.com/rxn1d/courses-2-2016/blob/master/module12/module_12_home_work.md)
  * Пишем свою реализацию связного списка
+
+13\. Разбираем [ДЗ #7](https://github.com/rxn1d/courses-2-2016/blob/master/module7/module_7_home_work.md)
+и повторяем ООП
+
+[ДЗ #13](https://github.com/rxn1d/courses-2-2016/blob/master/module13/module_13_home_work.md)
+ * Повторяем ООП
+ * Решаем задачки
+ * Читаем про базы данных
+
+14\. Разбираем [ДЗ #11](https://github.com/rxn1d/courses-2-2016/blob/master/module11/module_11_home_work.md)
+и повторяем коллекции
+
+[ДЗ #14](https://github.com/rxn1d/courses-2-2016/blob/master/module14/module_14_home_work.md)
+* Повторяем коллекции
+* Читаем про базы данных
+* Решаем задачки
