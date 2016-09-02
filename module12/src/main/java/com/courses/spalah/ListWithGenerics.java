@@ -17,7 +17,7 @@ public class ListWithGenerics {
     }
 
     public static void typeCheck() {
-        ArrayList<String> strings = new ArrayList<>();
+        ArrayList<String> strings = new ArrayList<String >();
         strings.add("A");
         strings.add("B");
 //        strings.add(1L);
