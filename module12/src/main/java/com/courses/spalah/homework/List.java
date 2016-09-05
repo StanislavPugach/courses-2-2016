@@ -17,33 +17,34 @@ public class List<E> implements MyList<E> {
 
     @Override
     public boolean isEmpty() {
-        if (size == 0){
+        if (size == 0) {
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
     @Override
     public boolean add(E element) {
-        Node<E> node = new Node<E>();
+        Node<E> node = new Node<E>(); //null
         node.item = element;
 
-        if (firstElement == null){
+        if (firstElement == null) {
             firstElement = node;
+            size++;
+        } else {
+            Node<E> current = firstElement;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = node;
             size++;
         }
 
-        else {
-            node.next = firstElement;
-            firstElement = node;
-            size++;
-        }
         return true;
     }
 
     @Override
     public void add(int index, E element) {
-        Node<E> nItem = firstElement;
+        Node<E> nItem = firstElement; // null
         for (int i = 0; i < index; i++) {
             nItem = nItem.next;
         }
@@ -54,20 +55,18 @@ public class List<E> implements MyList<E> {
     }
 
     @Override
-    public void remove(int index) { //5
+    public void remove(int index) {
         Node<E> nItem = firstElement;
-        if (index == 0){
+        if (index == 0) {
             firstElement = firstElement.next;
             size--;
-        }
-        else {
-            for (int i = 0; i < index - 1; i++) { //3 4
+        } else {
+            for (int i = 0; i < index - 1; i++) {
                 nItem = nItem.next; //5
             }
-            if (nItem.next.next == null){
+            if (nItem.next.next == null) {
                 nItem.next = null;
-            }
-            else {
+            } else {
                 nItem.next = nItem.next.next;
             }
             size--;
@@ -99,12 +98,13 @@ public class List<E> implements MyList<E> {
     public boolean contains(E element) {
         boolean result = false;
         Node<E> nItem = firstElement;
-            for (int i = 0; i < size; i++) {
-                if (nItem.item == element) {
-                    result = true;
-                }
-                nItem = nItem.next;
+        for (int i = 0; i < size; i++) {
+            if (nItem.equals(element)) {
+                result = true;
+                break;
             }
+            nItem = nItem.next;
+        }
         return result;
     }
 
@@ -119,7 +119,7 @@ public class List<E> implements MyList<E> {
             @Override
             public E next() {
                 E element = null;
-                if (this.hasNext()){
+                if (this.hasNext()) {
                     element = firstElement.item;
                     firstElement = firstElement.next;
                 }
@@ -132,14 +132,19 @@ public class List<E> implements MyList<E> {
         N item;
         Node<N> next;
 
-        Node(){
+        Node() {
             this.item = null;
             this.next = null;
         }
 
-        Node(N item, Node<N> next){
+        Node(N item, Node<N> next) {
             this.item = item;
             this.next = next;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            return item.equals(obj);
         }
     }
 }

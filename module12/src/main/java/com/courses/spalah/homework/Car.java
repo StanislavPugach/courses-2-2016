@@ -30,4 +30,10 @@ public class Car {
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Car car = (Car) obj;
+        return (this.priceInDollars == car.priceInDollars) && (this.modelName.equals(car.modelName));
+    }
 }

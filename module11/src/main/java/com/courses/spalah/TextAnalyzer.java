@@ -21,7 +21,7 @@ public class TextAnalyzer {
      void writeStatistic(File file, ArrayList<String> text) {
         try {
             PrintWriter writer = new PrintWriter(file);
-            writer.println("COUNT OF SYMBOLS: " + getCountOfSimbols(text));
+            writer.println("COUNT OF SYMBOLS: " + getCountOfSymbols(text));
             writer.println("COUNT OF WORDS: " + getCountOfWords(text));
             writer.println("COUNT OF SENTENCES: " + getCountOfSentences(text));
             writer.println("COUNT OF UNIQUE WORDS: " + getCountOfUniqueWords(text));
@@ -64,7 +64,16 @@ public class TextAnalyzer {
         return words;
     }
 
-    private int getCountOfSimbols(ArrayList<String> text) {
+    private ArrayList<Character> getArrayOfChars(String text) {
+        ArrayList<Character> arrayOfChars = new ArrayList<Character>();
+        text = text.replaceAll(",", "").replaceAll("\\.", "").replaceAll(";", "").replaceAll(" ", "");
+        for (int i = 0; i < text.length(); i++) {
+            arrayOfChars.add(text.charAt(i));
+        }
+        return arrayOfChars;
+    }
+
+    private int getCountOfSymbols(ArrayList<String> text) {
         int count = 0;
         for (String num :
                 text) {
@@ -74,14 +83,6 @@ public class TextAnalyzer {
         return count;
     }
 
-    private ArrayList<Character> getArrayOfChars(String text) {
-        ArrayList<Character> arrayOfChars = new ArrayList<Character>();
-        text = text.replaceAll(",", "").replaceAll("\\.", "").replaceAll(";", "").replaceAll(" ", "");
-        for (int i = 0; i < text.length(); i++) {
-            arrayOfChars.add(text.charAt(i));
-        }
-        return arrayOfChars;
-    }
 
     private int getCountOfWords(ArrayList<String> text) {
         int count = 0;
