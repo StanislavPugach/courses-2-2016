@@ -1,6 +1,7 @@
 package com.courses.spalah.homework;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Created by Stanislav Pugach on 01.09.2016.
@@ -110,22 +111,24 @@ public class List<E> implements MyList<E> {
 
     @Override
     public Iterator iterator() {
-        return new Iterator() {
-            @Override
-            public boolean hasNext() {
-                return (firstElement.next != null);
-            }
+        return new ListIterator();
 
-            @Override
-            public E next() {
-                E element = null;
-                if (this.hasNext()) {
-                    element = firstElement.item;
-                    firstElement = firstElement.next;
-                }
-                return element;
-            }
-        };
+//        return new Iterator() {
+//            @Override
+//            public boolean hasNext() {
+//                return (firstElement.next != null);
+//            }
+//
+//            @Override
+//            public E next() {
+//                E element = null;
+//                if (this.hasNext()) {
+//                    element = firstElement.item;
+//                    firstElement = firstElement.next;
+//                }
+//                return element;
+//            }
+//        };
     }
 
     private static class Node<N> {
@@ -145,6 +148,38 @@ public class List<E> implements MyList<E> {
         @Override
         public boolean equals(Object obj) {
             return item.equals(obj);
+        }
+    }
+
+    private class ListIterator implements Iterator<E>{
+
+        private int cursor = 0;
+        private Node<E> element;
+
+        public ListIterator(){
+            this.element = firstElement;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return cursor < size();
+        }
+
+        @Override
+        public E next() {
+            while (this.hasNext()) {
+                E current = element.item;
+                cursor++;
+                element = element.next;
+                return current;
+            }
+            throw new NoSuchElementException();
+        }
+
+        @Override
+        public void remove() {
+            List.this.remove(cursor);
+            size--;
         }
     }
 }
