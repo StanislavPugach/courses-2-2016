@@ -20,3 +20,23 @@
      * [Ссылка #2](https://www.youtube.com/watch?v=fI8GNWkf8WA&index=2&list=PLhlTilzRdxykd4cTjkscMUrGNvNoGklIK)
    * Статьи
      * [Вводный курс в базы данных](http://citforum.ru/database/advanced_intro/2.shtml)
+
+### Задачки
+ 1. \* Закончить класс `RubberIntArray`. Класс является оберткой над массивом `int[]`. Класс должен уметь возвращать элемент
+ по индексу массива в методе `getByIndex()` и добавлять элементы в конец массива в методе `add()`, при этому увеличивая размер массива на 5, если это нужно.
+ 2. \** Закончить класс `WordsPercentageCalculator`. Класс умеет считывать все слова из текстового файла.
+ Метод, который считает процентное отношение конкретного слова ко всем словам в тексте не закончен (метод `getPercentageMap()`).
+ Вам необходимо реализовать этот метод таким образом, чтобы он возвращал `Map`, ключем которой является слово,
+ а значением процентное соотношение ключа(слова) к общему количеству слов в тексте.
+ 3. \*** Реализуем мультимапу
+     * Суть мультимапы в том, что по она по ключу хранит коллекцию значений а не единственное значение. Например:
+       ```
+         MultiMap<String, String> multiMap = MultiMapFactory.createMultiMap(); // []
+         multiMap.put("fruits", "apple"); // [fruits - [apple]]
+         multiMap.put("fruits", "banana"); // [fruits - [apple, banana]]
+         multiMap.put("fruits", "pear"); // [fruits - [apple, banana, pear]]
+
+         Collection<String> fruits = multiMap.get("fruits"); // [apple, banana, pear]
+       ```
+     * Интерфейс `MultiMap` содержит в себе методы, которые необходимо реализовать
+     * **Обязательно следим за тем, чтобы проходили тесты**
