@@ -9,6 +9,7 @@ import java.util.NoSuchElementException;
 public class List<E> implements MyList<E> {
     private int size = 0;
     private Node<E> firstElement;
+    private Node<E> lastElement;
 
 
     @Override
@@ -30,13 +31,14 @@ public class List<E> implements MyList<E> {
 
         if (firstElement == null) {
             firstElement = node;
+            lastElement = node;
+            firstElement.next = lastElement;
+            lastElement.previous = firstElement;
             size++;
         } else {
-            Node<E> current = firstElement;
-            while (current.next != null) {
-                current = current.next;
-            }
-            current.next = node;
+            lastElement.next = node;
+            node.previous = lastElement;
+            lastElement = node;
             size++;
         }
 
@@ -45,11 +47,19 @@ public class List<E> implements MyList<E> {
 
     @Override
     public void add(int index, E element) {
-        Node<E> nItem = firstElement; // null
-        for (int i = 0; i < index; i++) {
-            nItem = nItem.next;
+        Node<E> nItem = null; // null
+        if (index < size / 2) {
+            nItem = firstElement;
+            for (int i = 0; i < index; i++) {
+                nItem = nItem.next;
+            }
+        } else {
+            nItem = lastElement;
+            for (int i = 0; i < size - index; i++) {
+                nItem = nItem.previous;
+            }
         }
-        Node<E> node = new Node<E>(nItem.item, nItem.next);
+        Node<E> node = new Node<E>(nItem.item, nItem.next, nItem);
         nItem.item = element;
         nItem.next = node;
         size++;
@@ -77,18 +87,34 @@ public class List<E> implements MyList<E> {
 
     @Override
     public E get(int index) {
-        Node<E> nItem = firstElement;
-        for (int i = 0; i < index; i++) {
-            nItem = nItem.next;
+        Node<E> nItem = null; // null
+        if (index <= size / 2) {
+            nItem = firstElement;
+            for (int i = 0; i < index; i++) {
+                nItem = nItem.next;
+            }
+        } else {
+            nItem = lastElement;
+            for (int i = 0; i < size - index; i++) {
+                nItem = nItem.previous;
+            }
         }
         return nItem.item;
     }
 
     @Override
     public E set(int index, E element) {
-        Node<E> nItem = firstElement;
-        for (int i = 0; i < index; i++) {
-            nItem = nItem.next;
+        Node<E> nItem = null; // null
+        if (index <= size / 2) {
+            nItem = firstElement;
+            for (int i = 0; i < index; i++) {
+                nItem = nItem.next;
+            }
+        } else {
+            nItem = lastElement;
+            for (int i = 0; i < size - index; i++) {
+                nItem = nItem.previous;
+            }
         }
         E retElement = nItem.item;
         nItem.item = element;
@@ -112,37 +138,23 @@ public class List<E> implements MyList<E> {
     @Override
     public Iterator iterator() {
         return new ListIterator();
-
-//        return new Iterator() {
-//            @Override
-//            public boolean hasNext() {
-//                return (firstElement.next != null);
-//            }
-//
-//            @Override
-//            public E next() {
-//                E element = null;
-//                if (this.hasNext()) {
-//                    element = firstElement.item;
-//                    firstElement = firstElement.next;
-//                }
-//                return element;
-//            }
-//        };
     }
 
     private static class Node<N> {
         N item;
         Node<N> next;
+        Node<N> previous;
 
         Node() {
             this.item = null;
             this.next = null;
+            this.previous = null;
         }
 
-        Node(N item, Node<N> next) {
+        Node(N item, Node<N> next, Node<N> previous) {
             this.item = item;
             this.next = next;
+            this.previous = previous;
         }
 
         @Override
