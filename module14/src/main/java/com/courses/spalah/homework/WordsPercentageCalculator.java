@@ -55,6 +55,20 @@ public class WordsPercentageCalculator {
     public Map<String, Float> getPercentageMap() {
         HashMap<String, Float> percentageMap = new HashMap<>();
         // TODO ваш код должен быть тут
+        for (String word :
+                words) {
+            Float count = percentageMap.get(word);
+            if (count == null) {
+                percentageMap.put(word, 1F);
+            } else {
+                percentageMap.put(word, count + 1);
+            }
+        }
+
+        for (Map.Entry<String, Float> num:
+             percentageMap.entrySet()) {
+            num.setValue(num.getValue() / words.size() * 100);
+        }
         return percentageMap;
     }
 }
