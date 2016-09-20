@@ -18,7 +18,7 @@ public class TextAnalyzer {
         textAnalyzer.writeStatistic(OutFile, text);
     }
 
-     void writeStatistic(File file, ArrayList<String> text) {
+    void writeStatistic(File file, ArrayList<String> text) {
         try {
             PrintWriter writer = new PrintWriter(file);
             writer.println("COUNT OF SYMBOLS: " + getCountOfSymbols(text));
@@ -75,8 +75,7 @@ public class TextAnalyzer {
 
     private int getCountOfSymbols(ArrayList<String> text) {
         int count = 0;
-        for (String num :
-                text) {
+        for (String num : text) {
             num = num.replaceAll(" ", "");
             count += num.length();
         }
@@ -86,8 +85,7 @@ public class TextAnalyzer {
 
     private int getCountOfWords(ArrayList<String> text) {
         int count = 0;
-        for (String num :
-                text) {
+        for (String num : text) {
             String[] words = getArrayOfWords(num);
             count += words.length;
         }
@@ -96,11 +94,9 @@ public class TextAnalyzer {
 
     private int getCountOfSentences(ArrayList<String> text) {
         int count = 0;
-        for (String num :
-                text) {
+        for (String num : text) {
             String[] words = num.split(" ");
-            for (String word :
-                    words) {
+            for (String word : words) {
                 if (word.contains(".")) {
                     count++;
                 }
@@ -111,11 +107,9 @@ public class TextAnalyzer {
 
     private int getCountOfUniqueWords(ArrayList<String> text) {
         Set<String> words = new HashSet<String>();
-        for (String num :
-                text) {
+        for (String num : text) {
             String[] arrayOfWords = getArrayOfWords(num);
-            for (String num1 :
-                    arrayOfWords) {
+            for (String num1 : arrayOfWords) {
                 words.add(num1);
             }
         }
@@ -124,29 +118,22 @@ public class TextAnalyzer {
 
     private String getMostPopularWord(ArrayList<String> text) {
         Map<String, Integer> words = new HashMap<String, Integer>();
-        for (String num :
-                text) {
+        for (String num : text) {
             String[] arrayOfWords = getArrayOfWords(num);
-            for (String num1 :
-                    arrayOfWords) {
+            for (String num1 : arrayOfWords) {
                 if (!words.containsKey(num1)) {
                     words.put(num1, 1);
                     continue;
+                } else {
+                    int currentCount = words.get(num1);
+                    words.put(num1, ++currentCount);
                 }
-                for (Map.Entry<String, Integer> word :
-                        words.entrySet()) {
-                    if (num1.equals(word.getKey())) {
-                        word.setValue(word.getValue() + 1);
-                    }
-                }
-
             }
         }
 
         String mostPopularWord = "";
         int count = 1;
-        for (Map.Entry<String, Integer> word :
-                words.entrySet()) {
+        for (Map.Entry<String, Integer> word : words.entrySet()) {
             if (word.getValue() > count) {
                 mostPopularWord = word.getKey();
                 count = word.getValue();
@@ -159,11 +146,9 @@ public class TextAnalyzer {
     private int getLengthOfShortestWord(ArrayList<String> text) {
         int length = 16;
         String word = "";
-        for (String num :
-                text) {
+        for (String num : text) {
             String[] words = getArrayOfWords(num);
-            for (String num1 :
-                    words) {
+            for (String num1 : words) {
                 if (num1.length() < length) {
                     word = num1;
                     length = num1.length();
@@ -177,11 +162,9 @@ public class TextAnalyzer {
     private int getLengthOfLongestWord(ArrayList<String> text) {
         int length = 1;
         String word = "";
-        for (String num :
-                text) {
+        for (String num : text) {
             String[] words = getArrayOfWords(num);
-            for (String num1 :
-                    words) {
+            for (String num1 : words) {
                 if (num1.length() > length) {
                     word = num1;
                     length = num1.length();
@@ -194,28 +177,21 @@ public class TextAnalyzer {
 
     private String getCountEachOfWords(ArrayList<String> text) {
         Map<String, Integer> words = new HashMap<String, Integer>();
-        for (String num :
-                text) {
+        for (String num : text) {
             String[] arrayOfWords = getArrayOfWords(num);
-            for (String num1 :
-                    arrayOfWords) {
+            for (String num1 : arrayOfWords) {
                 if (!words.containsKey(num1)) {
                     words.put(num1, 1);
                     continue;
+                } else {
+                    int currentCount = words.get(num1);
+                    words.put(num1, ++currentCount);
                 }
-                for (Map.Entry<String, Integer> word :
-                        words.entrySet()) {
-                    if (num1.equals(word.getKey())) {
-                        word.setValue(word.getValue() + 1);
-                    }
-                }
-
             }
         }
 
         StringBuilder stringOfWords = new StringBuilder();
-        for (Map.Entry<String, Integer> word :
-                words.entrySet()) {
+        for (Map.Entry<String, Integer> word : words.entrySet()) {
             stringOfWords.append(word.getKey() + " - " +
                     word.getValue() + "\n");
         }
@@ -224,30 +200,23 @@ public class TextAnalyzer {
     }
 
     private String getCountEachOfCharacter(ArrayList<String> text) {
-        Map<Character, Integer> words = new HashMap<Character, Integer>();
+        Map<Character, Integer> chars = new HashMap<Character, Integer>();
 
-        for (String num :
-                text) {
+        for (String num : text) {
             ArrayList<Character> arrayOfChars = getArrayOfChars(num);
-            for (Character ch :
-                    arrayOfChars) {
-
-                if (!words.containsKey(ch)) {
-                    words.put(ch, 1);
+            for (Character ch : arrayOfChars) {
+                if (!chars.containsKey(ch)) {
+                    chars.put(ch, 1);
                     continue;
-                }
-                for (Map.Entry<Character, Integer> word :
-                        words.entrySet()) {
-                    if (ch == word.getKey()) {
-                        word.setValue(word.getValue() + 1);
-                    }
+                } else {
+                    int currentCount = chars.get(ch);
+                    chars.put(ch, ++currentCount);
                 }
             }
         }
 
         StringBuilder stringOfChars = new StringBuilder();
-        for (Map.Entry<Character, Integer> word :
-                words.entrySet()) {
+        for (Map.Entry<Character, Integer> word : chars.entrySet()) {
             stringOfChars.append(word.getKey() + " - " +
                     word.getValue() + "\n");
         }
