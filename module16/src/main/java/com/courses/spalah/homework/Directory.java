@@ -14,8 +14,12 @@ import javax.swing.GroupLayout;
  * @author unknown
  */
 public class Directory extends JFrame {
+    private DriverConnection driverConnection;
+
     public Directory() {
+        driverConnection = new DriverConnection();
         initComponents();
+
     }
 
     private void saveAction(ActionEvent e) {
@@ -23,7 +27,7 @@ public class Directory extends JFrame {
         String lastName = last_nameIn.getText();
         String address = addressIn.getText();
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "79652054");
+            Connection connection = driverConnection.getConnection();
             PreparedStatement statement = connection.prepareStatement("INSERT INTO people.address (address) VALUES (?);");
             statement.setString(1,address);
             statement.execute();

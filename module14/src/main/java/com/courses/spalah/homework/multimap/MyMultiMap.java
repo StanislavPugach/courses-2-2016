@@ -67,8 +67,7 @@ public class MyMultiMap<K, V> implements MultiMap<K, V> {
     @Override
     public Collection<V> allValues() {
         ArrayList<V> allElements = new ArrayList<V>();
-        for (Map.Entry<K, ArrayList<V>> num :
-                map.entrySet()) {
+        for (Map.Entry<K, ArrayList<V>> num : map.entrySet()) {
             ArrayList<V> bucket = num.getValue();
             allElements.addAll(bucket);
         }
@@ -77,8 +76,7 @@ public class MyMultiMap<K, V> implements MultiMap<K, V> {
 
     @Override
     public boolean containsValue(V value) {
-        for (Map.Entry<K, ArrayList<V>> num :
-                map.entrySet()) {
+        for (Map.Entry<K, ArrayList<V>> num : map.entrySet()) {
             ArrayList<V> bucket = num.getValue();
             for (V obj :
                     bucket) {
@@ -102,5 +100,5 @@ public class MyMultiMap<K, V> implements MultiMap<K, V> {
     public int size() {
         return size;
     }
-    
+
 }
