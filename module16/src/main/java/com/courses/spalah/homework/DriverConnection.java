@@ -10,7 +10,7 @@ import java.util.Properties;
  * Created by Stanislav Pugach on 21.09.2016.
  */
  class DriverConnection {
-    private static final String DB_PROPERTIES = "/connectionDB.properties";
+    private static final String DB_PROPERTIES = "connectionDB.properties";
     private String URL;
     private String user;
     private String password;
@@ -31,10 +31,16 @@ import java.util.Properties;
 
     private void init() {
         Properties properties = new Properties();
+        InputStream input = getClass().getClassLoader().getResourceAsStream(DB_PROPERTIES);
         try {
-            properties.load(DriverConnection.class.getResourceAsStream(DB_PROPERTIES));
+            if (input != null) {
+                properties.load(input);
+            } else {
+                throw new FileNotFoundException("Property file "+ DB_PROPERTIES + " not found in the classpath");
+            }
+
             URL = properties.getProperty("URL");
-            user = properties.getProperty("url");
+            user = properties.getProperty("user");
             password = properties.getProperty("password");
         } catch (IOException e) {
             e.printStackTrace();

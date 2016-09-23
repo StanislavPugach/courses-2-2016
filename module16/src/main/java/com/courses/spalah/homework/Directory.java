@@ -14,61 +14,23 @@ import javax.swing.GroupLayout;
  * @author unknown
  */
 public class Directory extends JFrame {
-    private DriverConnection driverConnection;
 
     public Directory() {
-        driverConnection = new DriverConnection();
+
         initComponents();
 
     }
 
     private void saveAction(ActionEvent e) {
-        String firstName = first_nameIn.getText();
-        String lastName = last_nameIn.getText();
-        String address = addressIn.getText();
-        try {
-            Connection connection = driverConnection.getConnection();
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO people.address (address) VALUES (?);");
-            statement.setString(1,address);
-            statement.execute();
-            statement = connection.prepareStatement("SELECT id FROM people.address WHERE address LIKE ?;"); //get address id
-            statement.setString(1,address);
-            ResultSet id = statement.executeQuery();
-            id.next();
-            int ID = id.getInt("id");
-            statement = connection.prepareStatement("INSERT INTO people.person " +
-                    "(first_name, last_name, address_id) VALUES (?,?,?);");
-            statement.setString(1,firstName);
-            statement.setString(2,lastName);
-            statement.setInt(3,ID);
-            statement.execute();
-            connection.close();
-        } catch (SQLException e1) {
-            e1.printStackTrace();
-        }
+        DataManage personDataManage = new Person(first_nameIn.getText(),last_nameIn.getText(),addressIn.getText());
+        personDataManage.save();
     }
 
     private void readAction(ActionEvent e) {
-        int id = Integer.parseInt(ID.getText());
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "79652054");
-            PreparedStatement statement = connection.prepareStatement
-                    ("SELECT first_name, last_name, address" +
-                    " FROM people.person AS p INNER JOIN " +
-                    "people.address AS a ON p.address_id = a.id WHERE address_id LIKE ?;");
-            statement.setInt(1,id);
-            ResultSet resultSet = statement.executeQuery();
-            resultSet.next();
-            String firstName = resultSet.getString("first_name");
-            String lastName = resultSet.getString("last_name");
-            String address = resultSet.getString("address");
-            first_nameOut.setText(firstName);
-            last_nameOut.setText(lastName);
-            addressOut.setText(address);
-        } catch (SQLException e1) {
-            e1.printStackTrace();
-        }
-
+        Person person = new Person().load(Integer.parseInt(ID.getText()));
+        first_nameOut.setText(person.getFirstName());
+        last_nameOut.setText(person.getLastName());
+        addressOut.setText(person.getAddress());
     }
 
     private void initComponents() {
