@@ -7,6 +7,7 @@
     <groupId>com.courses.spalah</groupId>
     <artifactId>module18</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <dependencies>
         <dependency>

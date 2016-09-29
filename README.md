@@ -202,3 +202,8 @@
 
 [ДЗ #18](https://github.com/rxn1d/courses-2-2016/blob/master/module18/module_18_home_work.md)
  * Пишем маленькое web-приложение
+
+19\. Рефлексия
+
+[ДЗ #19](https://github.com/rxn1d/courses-2-2016/blob/master/module19/module_19_home_work.md)
+ * Пишем приложение для работы с аннотациями

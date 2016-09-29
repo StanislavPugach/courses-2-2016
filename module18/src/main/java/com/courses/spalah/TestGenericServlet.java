@@ -1,4 +1,4 @@
-package spalah;
+package com.courses.spalah;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletConfig;
