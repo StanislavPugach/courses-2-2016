@@ -207,3 +207,16 @@
 
 [ДЗ #19](https://github.com/rxn1d/courses-2-2016/blob/master/module19/module_19_home_work.md)
  * Пишем приложение для работы с аннотациями
+
+20\. Юнит тестирование
+ * Что такое unit тестирование
+ * Зачем нужны unit тесты
+ * Фреймворки для юнит тестирования в Java
+ * Пример
+ * Junit и его API
+ * Интеграционные тесты
+ * TDD
+
+
+[ДЗ #20](https://github.com/rxn1d/courses-2-2016/blob/master/module20/module_20_home_work.md)
+ * Пишем кредитный калькулятор и покрываем его тестами
