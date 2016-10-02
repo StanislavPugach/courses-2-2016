@@ -38,34 +38,28 @@
         <module name="module16" />
         <module name="module17" />
         <module name="module18" />
+        <module name="module19" />
         <module name="module5" />
         <module name="module7" />
       </profile>
-      <profile default="false" name="Annotation profile for module19" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="module19" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="module10" target="1.8" />
+      <module name="module10" target="1.5" />
       <module name="module11" target="1.5" />
-      <module name="module12" target="1.8" />
-      <module name="module13" target="1.8" />
-      <module name="module14" target="1.8" />
-      <module name="module15" target="1.8" />
-      <module name="module16" target="1.8" />
-      <module name="module17" target="1.8" />
+      <module name="module12" target="1.5" />
+      <module name="module13" target="1.5" />
+      <module name="module14" target="1.5" />
+      <module name="module15" target="1.5" />
+      <module name="module16" target="1.5" />
+      <module name="module17" target="1.5" />
       <module name="module18" target="1.8" />
-      <module name="module19" target="1.8" />
+      <module name="module19" target="1.5" />
       <module name="module2" target="1.8" />
       <module name="module3" target="1.8" />
       <module name="module4" target="1.5" />
-      <module name="module5" target="1.8" />
+      <module name="module5" target="1.5" />
       <module name="module6" target="1.5" />
-      <module name="module7" target="1.7" />
+      <module name="module7" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

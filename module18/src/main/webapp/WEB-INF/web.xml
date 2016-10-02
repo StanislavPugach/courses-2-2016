@@ -16,11 +16,7 @@
 
     <servlet-mapping>
         <servlet-name>test</servlet-name>
-<<<<<<< HEAD
         <url-pattern>/test</url-pattern>
-=======
-        <url-pattern>/</url-pattern>
->>>>>>> ee9676ee6b7c18bd48110ab7c80a97c7eab37349
     </servlet-mapping>
 
 </web-app>
