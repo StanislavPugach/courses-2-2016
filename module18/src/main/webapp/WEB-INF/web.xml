@@ -11,7 +11,12 @@
 
     <servlet>
         <servlet-name>test</servlet-name>
-        <servlet-class>spalah.TestGenericServlet</servlet-class>
+        <servlet-class>com.courses.spalah.TestGenericServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>user</servlet-name>
+        <servlet-class>spalah.homework.LoadUserServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -19,4 +24,8 @@
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>user</servlet-name>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
 </web-app>
