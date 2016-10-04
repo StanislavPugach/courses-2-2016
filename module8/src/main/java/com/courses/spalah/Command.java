@@ -1,19 +1,41 @@
 package com.courses.spalah;
 
 /**
- * Created by Jeka on 29.07.2016.
+ * Created by Пугач Станислав on 31.07.2016.
  */
-public abstract class Command {
-    String[] arguments;
-    Roulette roulette;
+abstract class Command {
+    private String[] command;
 
-    public void setArguments(String[] arguments) {
-        this.arguments = arguments;
+    Command(String[] command) {
+        this.command = command;
     }
 
-    public void setRoulette(Roulette roulette) {
-        this.roulette = roulette;
+    static Command getExactCommand(String[] command) {
+        Commands switchCommand = Commands.valueOf(command[0]);
+        Command result = null;
+        switch (switchCommand) {
+            case NEW_USER:
+                result = new NewUserCommand(command);
+                break;
+            case BET:
+                result = new BetCommand(command);
+                break;
+            case PLAY_GAME:
+                result = new PlayCommand(command);
+                break;
+            case EXIT:
+                result = new ExitCommand(command);
+                break;
+            case INFO:
+                result = new InfoCommand(command);
+                break;
+        }
+        return result;
     }
 
-    public abstract void execute();
+    abstract void execute();
+
+    String[] getCommand() {
+        return command;
+    }
 }

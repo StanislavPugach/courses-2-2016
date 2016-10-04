@@ -1,11 +1,16 @@
 package com.courses.spalah;
 
 /**
- * Created by Jeka on 29.07.2016.
+ * Created by Пугач Станислав on 31.07.2016.
  */
-public class ExitCommand extends Command{
+ class ExitCommand extends Command {
+
+    public ExitCommand(String[] command) {
+        super(command);
+    }
+
     @Override
     public void execute() {
-        System.out.println("ВЫХОД");
+        ConsoleRoulette.setLoopGame(false);
     }
 }

@@ -1,0 +1,7 @@
+To add User type enter "NEW_USER NameOfUser Balance"
+To make a bet enter "BET NameOfUser BetValue NameOfBet", for STRAIGHT_UP "BET NameOfUser BetValue NameOfBet NumberOfBet"
+Bet can be: RED - BLACK
+            ODD - EVEN
+            SMALL - BIG
+            STRAIGHT_UP
+To play game enter "PLAY_GAME"
