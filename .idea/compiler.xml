@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/module11/src/main/java/com/courses/spalah/collections/Maps.java" />
+      <file url="file://$PROJECT_DIR$/module11/src/main/java/com/courses/spalah/collections/Iterables.java" />
+      <file url="file://$PROJECT_DIR$/module11/src/main/java/com/courses/spalah/collections/Sets.java" />
+      <file url="file://$PROJECT_DIR$/module11/src/main/java/com/courses/spalah/collections/Lists.java" />
+      <file url="file://$PROJECT_DIR$/module11/src/main/java/com/courses/spalah/collections/Collections.java" />
+    </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="!?*.java" />
@@ -22,19 +29,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="module10" />
-        <module name="module11" />
-        <module name="module12" />
-        <module name="module13" />
-        <module name="module14" />
-        <module name="module15" />
-        <module name="module16" />
-        <module name="module17" />
-        <module name="module18" />
         <module name="module19" />
         <module name="module20" />
-        <module name="module5" />
-        <module name="module7" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
