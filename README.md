@@ -220,3 +220,8 @@
 
 [ДЗ #20](https://github.com/rxn1d/courses-2-2016/blob/master/module20/module_20_home_work.md)
  * Пишем кредитный калькулятор и покрываем его тестами
+
+21\. Многопоточность
+
+[ДЗ #21](https://github.com/rxn1d/courses-2-2016/blob/master/module21/module_21_home_work.md)
+ * Пишем приложение "шарики"
