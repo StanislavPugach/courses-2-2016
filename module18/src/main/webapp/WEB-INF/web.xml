@@ -12,15 +12,12 @@
     <servlet>
         <servlet-name>test</servlet-name>
         <servlet-class>com.courses.spalah.TestGenericServlet</servlet-class>
-<<<<<<< HEAD
     </servlet>
 
     <servlet>
         <servlet-name>user</servlet-name>
         <servlet-class>spalah.homework.LoadUserServlet</servlet-class>
-=======
         <load-on-startup>1</load-on-startup>
->>>>>>> parent of 9c5be27... home work module 18
     </servlet>
 
     <servlet-mapping>

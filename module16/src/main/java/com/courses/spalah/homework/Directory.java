@@ -14,20 +14,22 @@ import javax.swing.GroupLayout;
  * @author unknown
  */
 public class Directory extends JFrame {
+    private DataManage dataManage;
 
     public Directory() {
-
         initComponents();
 
     }
 
     private void saveAction(ActionEvent e) {
-        DataManage personDataManage = new Person(first_nameIn.getText(),last_nameIn.getText(),addressIn.getText());
-        personDataManage.save();
+        Person person = new Person(first_nameIn.getText(),last_nameIn.getText(),addressIn.getText());
+        dataManage = new PersonManageDB();
+        dataManage.save(person);
     }
 
     private void readAction(ActionEvent e) {
-        Person person = new Person().load(Integer.parseInt(ID.getText()));
+        dataManage = new PersonManageDB();
+        Person person = (Person)dataManage.load(Integer.parseInt(ID.getText()));
         first_nameOut.setText(person.getFirstName());
         last_nameOut.setText(person.getLastName());
         addressOut.setText(person.getAddress());
@@ -66,7 +68,7 @@ public class Directory extends JFrame {
 
         //---- read ----
         read.setText("\u041f\u0440\u043e\u0447\u0438\u0442\u0430\u0442\u044c");
-        read.addActionListener(e -> readAction(e));
+       read.addActionListener(e -> readAction(e));
 
         //---- label1 ----
         label1.setText("\u0418\u043c\u044f");

@@ -5,7 +5,7 @@ package com.courses.spalah.homework;
  */
 public abstract class DataManage<N> {
 
-    public abstract int save();
+    public abstract int save(N obj);
 
     public abstract N load(int id);
  }
