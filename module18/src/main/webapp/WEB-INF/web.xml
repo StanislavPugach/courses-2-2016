@@ -20,6 +20,12 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <servlet>
+        <servlet-name>addUser</servlet-name>
+        <servlet-class>spalah.homework.SaveUserServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/*</url-pattern>
@@ -28,5 +34,10 @@
     <servlet-mapping>
         <servlet-name>user</servlet-name>
         <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>addUser</servlet-name>
+        <url-pattern>/addUser</url-pattern>
     </servlet-mapping>
 </web-app>

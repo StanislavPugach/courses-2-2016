@@ -8,17 +8,21 @@ import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import com.courses.spalah.homework.DataManage;
 import com.courses.spalah.homework.Person;
+import com.courses.spalah.homework.PersonManageDB;
 
 /**
  * Created by Stanislav Pugach on 26.09.2016.
  */
 public class LoadUserServlet extends HttpServlet {
-    Person person;
+    private Person person;
+    private DataManage<Person> personDataManage;
 
     public LoadUserServlet() {
         init();
         person = new Person();
+        personDataManage = new PersonManageDB();
     }
 
     @Override
@@ -35,9 +39,9 @@ public class LoadUserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Person person = new Person();
         String userId = req.getParameter("id");
-        person.load(Integer.parseInt(userId));
-        
+        person = personDataManage.load(Integer.parseInt(userId));
+        resp.getWriter().write("<html><body>"+ person.getFirstName() +"</body></html>");
     }
+
 }
