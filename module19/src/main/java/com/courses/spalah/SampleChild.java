@@ -1,4 +1,4 @@
-package com.courses.palah;
+package com.courses.spalah;
 
 /**
  * @author Ievgen Tararaka

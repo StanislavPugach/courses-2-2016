@@ -1,4 +1,4 @@
-package com.courses.palah;
+package com.courses.spalah;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;

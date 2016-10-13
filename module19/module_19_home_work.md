@@ -38,7 +38,7 @@
       main() {
         Person person = new Person();
 
-        ReflectioPersistent rf = new ReflectioPersistent();
+        ReflectionPersistent rf = new ReflectionPersistent();
         rf.store(person); // запись в базу в таблицу persons
       }
     ```
