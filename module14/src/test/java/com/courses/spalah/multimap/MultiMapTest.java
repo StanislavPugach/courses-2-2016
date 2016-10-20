@@ -9,6 +9,7 @@ import org.junit.runners.JUnit4;
 
 import java.util.Collection;
 
+import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
 import static org.junit.Assert.*;
 
 /**
