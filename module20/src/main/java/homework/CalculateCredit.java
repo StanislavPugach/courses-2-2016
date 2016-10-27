@@ -12,14 +12,6 @@ class CalculateCredit implements ActionListener {
     private float interestExpense;
     private float overpayment;
 
-    private float amount;
-    private int countOfMonth;
-    private float rate;
-    private int prepaymentInPercent;
-    private int onceCommissionPercent;
-    private int onceCommissionSum;
-    private int monthlyComPercent;
-    private int monthlyComSum;
 
     public CalculateCredit(Calculator calculator){
         this.calculator = calculator;
@@ -27,32 +19,25 @@ class CalculateCredit implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        initFrameVariables();
+        float amount = Float.parseFloat(calculator.getPurchaseAmount().getText());
+        int countOfMonth = (int)((calculator.getTerm().getSelectedItem()))*12;
         annuityMonthPayment = calculateAnnuityPayment(amount,countOfMonth);
         interestExpense = calculateInterestExpense(amount,countOfMonth);
         overpayment = calculateOnceCommission(amount) + calculateMonthlyCommission(amount,countOfMonth) + interestExpense;
         displayResult();
     }
 
-    protected void initFrameVariables(){
-        amount = Integer.parseInt(calculator.getPurchaseAmount().getText());
-        countOfMonth = (int)((calculator.getTerm().getSelectedItem()))*12;
-        rate = Float.parseFloat(calculator.getAnnualRate().getText());
-        prepaymentInPercent = Integer.parseInt(calculator.getPrepayment().getText());
-        onceCommissionPercent = Integer.parseInt(calculator.getOneTimeComPercent().getText());
-        onceCommissionSum = Integer.parseInt(calculator.getOneTimeComSum().getText());
-        monthlyComPercent = Integer.parseInt(calculator.getMonthlyComPercent().getText());
-        monthlyComSum = Integer.parseInt(calculator.getMonthlyComSum().getText());
-    }
 
     protected float calculateAnnuityPayment(float amount,int countOfMonth){
-        amount = calculatePrepayment(amount);
+        float rate = Float.parseFloat(calculator.getAnnualRate().getText());
+        amount = this.calculatePrepayment(amount);
         double monthlyRate = (rate/12)/100;
-        return  (float)(amount * monthlyRate * (1 + 1 / (Math.pow(1 + monthlyRate,countOfMonth) - 1)));
+        float result = (float)(amount * monthlyRate * (1 + 1 / (Math.pow(1 + monthlyRate,countOfMonth) - 1)));
+        return (float)(Math.round(result * 100.0) / 100.0);
     }
 
     protected float calculatePrepayment(float amount){
-        prepaymentInPercent = Integer.parseInt(calculator.getPrepayment().getText());
+        float prepaymentInPercent = Float.parseFloat(calculator.getPrepayment().getText());
         if (prepaymentInPercent != 0){
             float prepayment =  amount * prepaymentInPercent / 100;
             amount -= prepayment;
@@ -60,13 +45,17 @@ class CalculateCredit implements ActionListener {
         return amount;
     }
 
-    private float calculateOnceCommission(float amount){
+    protected float calculateOnceCommission(float amount){
+        float onceCommissionPercent = Float.parseFloat(calculator.getOneTimeComPercent().getText());
+        float onceCommissionSum = Float.parseFloat(calculator.getOneTimeComSum().getText());
         float commission = amount * onceCommissionPercent / 100;
         commission += onceCommissionSum;
         return commission;
     }
 
-    private float calculateMonthlyCommission(float amount, int countOfMonth){
+    protected float calculateMonthlyCommission(float amount, int countOfMonth){
+        float monthlyComPercent = Float.parseFloat(calculator.getMonthlyComPercent().getText());
+        float monthlyComSum = Float.parseFloat(calculator.getMonthlyComSum().getText());
         float commission =  countOfMonth * (amount * monthlyComPercent / 100);
         commission += monthlyComSum * countOfMonth;
         return commission;
