@@ -1,4 +1,4 @@
-package homework;
+package com.courses.spalah.homework;
 
 import javax.swing.*;
 import java.awt.*;

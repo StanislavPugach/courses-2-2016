@@ -1,4 +1,4 @@
-package homework;
+package com.courses.spalah.homework;
 
 import javax.swing.*;
 
@@ -10,7 +10,7 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new CircleFarm("Circle Farm v.1.0");
+                new CircleFarm("Circle Farm v.1.1");
             }
         });
     }

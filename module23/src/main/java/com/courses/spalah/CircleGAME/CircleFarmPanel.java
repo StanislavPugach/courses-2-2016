@@ -1,26 +1,27 @@
-package homework;
+package com.courses.spalah.CircleGAME;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Stanislav Pugach on 28.10.2016.
  */
 class CircleFarmPanel extends JPanel {
-    private CircleFarmListener farmListener;
+    private volatile ArrayList<Circle> circles = new ArrayList();
+    private CircleFarmListener listener = new CircleFarmListener(this);
 
     public CircleFarmPanel() {
-        farmListener = new CircleFarmListener();
-        this.addMouseListener(farmListener);
+        this.addMouseListener(listener);
         runRepaint();
-        moveCircles();
+        runCreateCircle();
     }
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        for (Circle circle : farmListener.getCircles()) {
+        for (Circle circle : circles) {
             Point position = circle.getPosition();
             int radius = circle.getRadius();
 
@@ -29,26 +30,47 @@ class CircleFarmPanel extends JPanel {
         }
     }
 
-    public void moveCircles() {
-        Thread moveCircles = new Thread(new Runnable() {
+    private void createCircle() {
+        Random random = new Random();
+        Dimension panelSize = getSize();
+        Point point = new Point(random.nextInt(670),random.nextInt(500));
+        Circle circle = new Circle();
+        circles.add(circle.init(point));
+        Thread movingCircle = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
+                    moveCircle(circle);
+                    try {
+                        Thread.sleep(20);
+                    } catch (InterruptedException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            }
+        });
+        movingCircle.start();
+    }
+
+    private void runCreateCircle() {
+        Thread create = new Thread(new Runnable() {
             @Override
             public void run() {
                 while (true) {
-                    for (Circle circle : farmListener.getCircles()) {
-                        moveCircle(circle);
-                    }
+                    createCircle();
                     try {
-                        Thread.sleep(20);
+                        Thread.sleep(5000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
             }
         });
-        moveCircles.start();
+        create.start();
     }
 
-    public void runRepaint() {
+
+    private void runRepaint() {
         Thread repaint = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -65,7 +87,7 @@ class CircleFarmPanel extends JPanel {
         repaint.start();
     }
 
-    private void moveCircle(Circle circle) {
+    public synchronized void moveCircle(Circle circle) {
         Point position = circle.getPosition();
         int radius = circle.getRadius();
         position.x += circle.getVx();
@@ -88,5 +110,10 @@ class CircleFarmPanel extends JPanel {
             circle.changeDirection(Circle.Direction.Y);
         }
         circle.setPosition(position);
+    }
+
+
+    public ArrayList<Circle> getCircles() {
+        return circles;
     }
 }

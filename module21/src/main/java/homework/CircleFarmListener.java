@@ -10,10 +10,8 @@ import java.util.ArrayList;
  */
  class CircleFarmListener extends MouseAdapter{
     private volatile ArrayList<Circle> circles = new ArrayList();
-    CircleFarmPanel farmPanel;
 
-    public CircleFarmListener(CircleFarmPanel panel) {
-        farmPanel = panel;
+    public CircleFarmListener() {
     }
 
     @Override
@@ -21,7 +19,6 @@ import java.util.ArrayList;
         super.mouseClicked(e);
         Circle circle = new Circle();
         circles.add(circle.init(e.getPoint()));
-        farmPanel.repaint();
         System.out.println("Click ");
     }
 
