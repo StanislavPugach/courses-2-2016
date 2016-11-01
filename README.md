@@ -235,3 +235,13 @@
 
 [ДЗ #23](https://github.com/rxn1d/courses-2-2016/blob/master/module23/module_23_home_work.md)
  * Улучшаем приложение "шарики"
+
+24\. ООД и паттерны
+
+25\. Build tools
+ * Ant
+ * Maven
+ * Gradle
+
+[ДЗ #25](https://github.com/rxn1d/courses-2-2016/blob/master/module25/module_25_home_work.md)
+ * Настраиваем билды для каждого из build tool для модуля 18.

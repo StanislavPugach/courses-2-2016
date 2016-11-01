@@ -148,6 +148,20 @@
         <processorPath useClasspath="true" />
         <module name="module23" />
       </profile>
+      <profile default="false" name="Annotation profile for module24" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="module24" />
+      </profile>
+      <profile default="false" name="Annotation profile for module25" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="module25" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="module10" target="1.8" />
@@ -165,6 +179,8 @@
       <module name="module21" target="1.8" />
       <module name="module22" target="1.8" />
       <module name="module23" target="1.8" />
+      <module name="module24" target="1.8" />
+      <module name="module25" target="1.8" />
       <module name="module3" target="1.8" />
       <module name="module4" target="1.8" />
       <module name="module5" target="1.8" />
