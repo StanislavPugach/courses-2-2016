@@ -7,11 +7,11 @@ import java.util.Random;
  * Created by Stanislav Pugach on 28.10.2016.
  */
 public class Circle {
-    private static final int MIN_RADIUS = 10;
+    private static final int MIN_RADIUS = 50;
     private static final int MAX_RADIUS = 60;
-    private static final int MAX_VELOCITY = 6;
-    private static final int MIN_VELOCITY = 3;
-    private static final int MAX_SATURATION = 255;
+    private static final int MAX_VELOCITY = 3;
+    private static final int MIN_VELOCITY = 1;
+    private static final int COUNT_OF_COLORS = 3;
 
     private Point position;
     private int radius;
@@ -44,10 +44,22 @@ public class Circle {
             this.vy = -MIN_VELOCITY;
         }
 
-        int red = random.nextInt(MAX_SATURATION);
-        int green = random.nextInt(MAX_SATURATION);
-        int blue = random.nextInt(MAX_SATURATION);
-        color = new Color(red, green, blue);
+        int colors = random.nextInt(COUNT_OF_COLORS);
+        switch (colors){
+            case 0:
+                color = Color.ORANGE;
+                break;
+            case 1:
+                color = Color.BLUE;
+                break;
+            case 2:
+                color = Color.BLACK;
+                break;
+            case 3:
+                color = Color.RED;
+                break;
+        }
+
         return this;
     }
 
@@ -56,13 +68,6 @@ public class Circle {
         if (direction == Direction.Y) vy = vy * (-1);
     }
 
-    public void changeColor(){
-        Random random = new Random();
-        int red = random.nextInt(MAX_SATURATION);
-        int green = random.nextInt(MAX_SATURATION);
-        int blue = random.nextInt(MAX_SATURATION);
-        color = new Color(red,green,blue);
-    }
 
     public enum Direction {
         X, Y

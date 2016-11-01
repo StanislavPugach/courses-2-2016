@@ -3,6 +3,7 @@ package com.courses.spalah.CircleGAME;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by Stanislav Pugach on 28.10.2016.
@@ -16,12 +17,17 @@ import java.util.ArrayList;
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        for (Circle circle : farmPanel.getCircles()) {
-            if (Math.sqrt((circle.getVx()-e.getX())*(circle.getVx()-e.getX())+(circle.getVy()-e.getY())*(circle.getVy()-e.getY()))<=circle.getRadius()){
-                farmPanel.getCircles().remove(circle);
+        for (Iterator<Circle> iterator = farmPanel.getCircles().iterator();iterator.hasNext();) {
+            Circle circle = iterator.next();
+            int circleRadius = circle.getRadius();
+            int circleX = circle.getPosition().x;
+            int circleY = circle.getPosition().y;
+            int mouseX = e.getX() - circleRadius / 2;
+            int mouseY = e.getY() - circleRadius / 2;
+            if (Math.sqrt((circleX - mouseX)*(circleX - mouseX)+(circleY - mouseY)*(circleY - mouseY)) <= circleRadius){
+                iterator.remove();
             }
         }
-        System.out.println("Click ");
     }
 
 }
