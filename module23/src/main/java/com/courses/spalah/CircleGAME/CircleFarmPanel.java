@@ -80,29 +80,33 @@ class CircleFarmPanel extends JPanel {
         if ((position.x + radius) >= panelSize.width) {
             position.x = panelSize.width - radius;
             circle.changeDirection(Circle.Direction.X);
-            multiplyCircle(circle);
+//            multiplyCircle(circle);
         }
         if (position.x < 0) {
             position.x = 0;
             circle.changeDirection(Circle.Direction.X);
-            multiplyCircle(circle);
+//            multiplyCircle(circle);
         }
         if ((position.y + radius) >= panelSize.height) {
             position.y = panelSize.height - radius;
             circle.changeDirection(Circle.Direction.Y);
-            multiplyCircle(circle);
+//            multiplyCircle(circle);
         }
         if (position.y < 0) {
             position.y = 0;
             circle.changeDirection(Circle.Direction.Y);
-            multiplyCircle(circle);
+//            multiplyCircle(circle);
         }
         circle.setPosition(position);
     }
 
     private void multiplyCircle(Circle circle) {
         Color color = circle.getColor();
-        if (color.equals(Color.BLACK) && color.equals(Color.BLUE)){
+        if (color.equals(Color.BLACK)){
+            newCircle(circle.getPosition());
+            //TODO change direction
+        }
+        if (color.equals(Color.BLUE)){
             newCircle(circle.getPosition());
         }
         if (color.equals(Color.ORANGE)){
