@@ -245,3 +245,21 @@
 
 [ДЗ #25](https://github.com/rxn1d/courses-2-2016/blob/master/module25/module_25_home_work.md)
  * Настраиваем билды для каждого из build tool для модуля 18.
+
+26\. Введение в ORM и JPA
+ * SQL или нет
+ * Минусы подхода с SQL
+ * Премущества ORM
+ * Схема работы ORM
+ * JPA
+
+27\. Hibernate
+ * Hibernate как JPA провайдер
+ * Базовая конфигурация
+ * Setup JPA
+ * Entity
+ * Аннотации
+ * Работа с Entity
+
+[ДЗ #27](https://github.com/rxn1d/courses-2-2016/blob/master/module27/module_27_home_work.md)
+ * Реализовать приложение для управления переводами между банковскими счетами.
