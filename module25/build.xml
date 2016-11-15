@@ -1,0 +1,8 @@
+<project name = "module18" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+    <property file="Ant.properties"/>
+    <property name="build.dir" value="build"/>
+    <property name="class.dir" value="${build.dir}/class"/>
+    <property name="stuff.jar" value="${build.dir}/stuff.jar"/>
+
+</project>
