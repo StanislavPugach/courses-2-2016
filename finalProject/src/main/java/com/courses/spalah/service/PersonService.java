@@ -7,4 +7,6 @@ import com.courses.spalah.domain.Person;
  */
 public interface PersonService {
     Person getById(long id);
+
+    Person save(Person person);
 }

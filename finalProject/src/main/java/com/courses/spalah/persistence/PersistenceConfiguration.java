@@ -8,11 +8,13 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @author Ievgen Tararaka
  */
 @Configuration
+@EnableTransactionManagement
 public class PersistenceConfiguration {
     private static final String ENTITY_PACKAGE_TO_SCAN = "com.courses.spalah.domain";
 

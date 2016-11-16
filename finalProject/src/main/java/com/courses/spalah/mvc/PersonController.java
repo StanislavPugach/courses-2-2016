@@ -25,4 +25,13 @@ public class PersonController {
         Person person = personService.getById(id);
         return new ResponseEntity<>(person, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "save", method = RequestMethod.GET)
+    public ResponseEntity<Person> savePerson(@RequestParam String name) {
+        Person newPerson = new Person();
+        newPerson.setName(name);
+
+        Person savedPerson = personService.save(newPerson);
+        return new ResponseEntity<>(savedPerson, HttpStatus.OK);
+    }
 }

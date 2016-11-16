@@ -5,4 +5,6 @@ package com.courses.spalah.persistence;
  */
 public interface Dao<E, I> {
     E getById(I id);
+
+    E save(E entity);
 }
