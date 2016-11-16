@@ -263,3 +263,44 @@
 
 [ДЗ #27](https://github.com/rxn1d/courses-2-2016/blob/master/module27/module_27_home_work.md)
  * Реализовать приложение для управления переводами между банковскими счетами.
+
+28\.Spring Ioc
+ * Coupling
+ * Сohesion
+ * Loose Coupling + High Сohesion
+ * Inversion of Control
+ * Dependency Injection
+ * Преимущества DI
+ * Spring
+ * Spring IoC
+   * Конфигурация
+   * Bean
+   * Контекст
+   * Constructor injection
+   * Setter injection
+   * Properties
+   * Lists
+   * Maps
+   * Factory
+
+29\. Spring MVC
+ * Servlets
+ * Web фреймворки
+ * Почему Spring MVC?
+ * Model-View-Controller(MVC) паттерн
+ * Front Controller
+ * DispatcherServlet
+ * Конфигурация - web.xml
+ * Spring context - application-servlet.xml
+ * Аннотации
+   * Component
+   * Controller
+   * Autowired
+   * Qualifier
+ * Простой контроллер
+ * Mapping
+   * Request Method
+   * PathVariable
+   * Добавление маппинга на контроллер
+   * Сonsumes и Produces
+ * Редирект и валидация
